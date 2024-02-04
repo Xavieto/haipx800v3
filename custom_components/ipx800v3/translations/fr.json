@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Configuration depuis le fichier configuration.yaml. Voir la documentation : https://github.com/Xavieto/haipx800v3."
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Interval de scan"
+        },
+        "title": "Options IPX800 V3"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "domain": "ipx800v3",
+  "name": "GCE IPX800 V3",
+  "codeowners": [
+    "@Xavieto"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "http"
+  ],
+  "documentation": "https://github.com/Xavieto/haipx800v3",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/Xavieto/haipx800v3/issues",
+  "requirements": [
+    "pyipx800v3_async>=0.3.0"
+  ],
+  "version": "0.1.0"
+}
