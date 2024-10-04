@@ -50,11 +50,16 @@ from .const import (
     DEFAULT_SCAN_INTERVAL,
     DEFAULT_TRANSITION,
     DOMAIN,
+    PLATFORMS,
     PUSH_USERNAME,
     REQUEST_REFRESH_DELAY,
     TYPE_DIGITALIN,
     TYPE_RELAY,
     UNDO_UPDATE_LISTENER,
+)
+
+from .tools_entities import (
+    filter_entities_by_platform,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -221,17 +226,14 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         )
         return True
 
-    # Load each supported component entities from their devices
-    devices = build_device_list(config[CONF_DEVICES])
+    entities = list(config[CONF_DEVICES])
 
-    for component in CONF_COMPONENT_ALLOWED:
-        _LOGGER.debug("Load component %s", component)
-        hass.data[DOMAIN][entry.entry_id][CONF_DEVICES][component] = filter_device_list(
-            devices, component
+    for platform in PLATFORMS:
+        _LOGGER.debug("Load platform %s", platform)
+        hass.data[DOMAIN][entry.entry_id][CONF_DEVICES][platform] = (
+            filter_entities_by_platform(entities, platform)
         )
-        hass.async_create_task(
-            hass.config_entries.async_forward_entry_setup(entry, component)
-        )
+    await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
     # Provide endpoints for the IPX to call to push states
     if CONF_PUSH_PASSWORD in config:
