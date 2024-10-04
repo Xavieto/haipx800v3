@@ -34,3 +34,9 @@ CONF_TYPE_ALLOWED = [
     TYPE_RELAY,
     TYPE_DIGITALIN,
 ]
+
+PLATFORMS = [
+    "binary_sensor",
+    "light",
+    "switch",
+]
