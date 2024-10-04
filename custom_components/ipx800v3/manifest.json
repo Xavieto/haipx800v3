@@ -14,5 +14,5 @@
   "requirements": [
     "pyipx800v3_async"
   ],
-  "version": "0.1.3"
+  "version": "0.1.4"
 }
