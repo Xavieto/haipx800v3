@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- bump pyipx800v2_async lib to 0.4.1
+
 ## 0.2.0
 
 - Add sensor for analog inputs (#3)

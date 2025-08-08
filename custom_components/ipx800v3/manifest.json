@@ -12,7 +12,7 @@
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/Xavieto/haipx800v3/issues",
   "requirements": [
-    "pyipx800v3_async==0.4.0"
+    "pyipx800v3_async==0.4.1"
   ],
-  "version": "0.2.0"
+  "version": "0.2.1"
 }
