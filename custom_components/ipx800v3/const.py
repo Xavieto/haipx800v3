@@ -22,21 +22,25 @@ CONF_TYPE = "type"
 
 TYPE_RELAY = "relay"
 TYPE_DIGITALIN = "digitalin"
+TYPE_ANALOGIN = "analogin"
 
 
 CONF_COMPONENT_ALLOWED = [
     "light",
     "switch",
-    "binary_sensor"
+    "binary_sensor",
+    "sensor"
 ]
 
 CONF_TYPE_ALLOWED = [
     TYPE_RELAY,
     TYPE_DIGITALIN,
+    TYPE_ANALOGIN
 ]
 
 PLATFORMS = [
     "binary_sensor",
     "light",
     "switch",
+    "sensor"
 ]
