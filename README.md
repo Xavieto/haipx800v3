@@ -18,8 +18,9 @@ Ensure your IPX800 V3 is not overload with request from other tools.
 
 For now, this integration is able to use this type of component :
 
-- `Output` en tant que switch ou light (avec https://www.gce-electronics.com/fr/nos-produits/314-module-diode-fil-pilote-.html)
-- `Input` en tant que binarysensor
+- `Output` as switch or light
+- `Input` as binarysensor
+- `Analog` as sensor
 
 ## Push state from l'IPX800 V3
 
@@ -54,5 +55,10 @@ ipx800v4:
         device_class: motion
         name: Motion Garage
         type: digitalin
+        id: 1
+      - component: sensor
+        device_class: humidity
+        name: Humidité Garage
+        type: analogin
         id: 1
 ```
