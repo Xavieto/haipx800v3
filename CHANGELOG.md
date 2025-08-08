@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2
+
+- remove ip check (not working with multiple ipx800v3)
+
 ## 0.2.1
 
 - bump pyipx800v2_async lib to 0.4.1

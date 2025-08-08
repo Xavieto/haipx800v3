@@ -1,4 +1,4 @@
-"""Support for IPX800 V4 binary sensors."""
+"""Support for IPX800 V3 binary sensors."""
 import logging
 
 from homeassistant.components.binary_sensor import BinarySensorEntity

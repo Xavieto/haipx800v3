@@ -1,4 +1,4 @@
-"""Support for IPX800 V4 binary sensors."""
+"""Support for IPX800 V3 sensors."""
 import logging
 
 from homeassistant.components.sensor import SensorEntity
@@ -41,6 +41,8 @@ async def async_setup_entry(
 
 
 class AnalogInputSensor(IpxEntity, SensorEntity):
+    """Representation of a IPX Analog In."""
+
     @property
     def update(self) -> float:
         return float(self.coordinator.data[f"AN{self._id}"])
