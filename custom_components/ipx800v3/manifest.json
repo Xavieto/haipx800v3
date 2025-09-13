@@ -8,11 +8,11 @@
   "dependencies": [
     "http"
   ],
-  "documentation": "https://github.com/Xavieto/haipx800v3",
+  "documentation": "https://git.roques.bzh/ha/haipx800v3",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/Xavieto/haipx800v3/issues",
+  "issue_tracker": "https://git.roques.bzh/ha/haipx800v3/issues",
   "requirements": [
     "pyipx800v3_async==0.4.1"
   ],
-  "version": "0.2.2"
+  "version": "0.3.0"
 }

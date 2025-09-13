@@ -8,7 +8,7 @@ from homeassistant.const import CONF_NAME, CONF_SCAN_INTERVAL
 from homeassistant.core import callback
 from homeassistant.data_entry_flow import FlowResult
 
-from .const import COORDINATOR, DEFAULT_SCAN_INTERVAL, DOMAIN
+from .const import COORDINATOR, DEFAULT_SCAN_INTERVAL, DOMAIN, CONF_UNIQUE_ID
 
 
 @config_entries.HANDLERS.register(DOMAIN)
@@ -21,7 +21,7 @@ class IpxConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     async def async_step_import(self, import_info) -> FlowResult:
         """Import a config entry from YAML config."""
         entry = await self.async_set_unique_id(
-            f"{DOMAIN}, {import_info.get(CONF_NAME)}"
+            f"{DOMAIN}, {import_info.get(CONF_UNIQUE_ID)}"
         )
 
         if entry:
