@@ -69,6 +69,7 @@ _LOGGER = logging.getLogger(__name__)
 DEVICE_CONFIG_SCHEMA_ENTRY = vol.Schema(
     {
         vol.Required(CONF_NAME): cv.string,
+        vol.Required(CONF_UNIQUE_ID): cv.string,
         vol.Required(CONF_COMPONENT): cv.string,
         vol.Required(CONF_TYPE): cv.string,
         vol.Optional(CONF_ID): cv.positive_int,
