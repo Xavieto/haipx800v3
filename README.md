@@ -35,7 +35,7 @@ First, if you want to use the push feature of your IPX800 V3, you should set the
 
 ```yaml
 # Example configuration.yaml entry
-ipx800v4:
+ipx800v3:
   - name: IPX800 V3
     host: "192.168.1.2"
     username: !secret ipx800v3_username
@@ -43,22 +43,26 @@ ipx800v4:
     push_password: !secret ipx800v3_push_password
     devices:
       - name: Water Boiler
+        unique_id: water_boiler
         icon: mdi:water-boiler
         type: "relay"
         component: "switch"
         id: 1
       - name: Light Garage
+        unique_id: garage_light
         type: relay
         component: light
         id: 7
       - component: binary_sensor
         device_class: motion
         name: Motion Garage
+        unique_id: garage_motion
         type: digitalin
         id: 1
       - component: sensor
         device_class: humidity
         name: Humidité Garage
+        unique_id: garage_humidity
         type: analogin
         id: 1
 ```

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+- add unique_id
+
 ## 0.2.2
 
 - remove ip check (not working with multiple ipx800v3)

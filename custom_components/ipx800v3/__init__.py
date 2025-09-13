@@ -41,6 +41,7 @@ from .const import (
     CONF_DEFAULT_BRIGHTNESS,
     CONF_DEVICES,
     CONF_ID,
+    CONF_UNIQUE_ID,
     CONF_PUSH_PASSWORD,
     CONF_TRANSITION,
     CONF_TYPE,
@@ -440,6 +441,7 @@ class IpxEntity(CoordinatorEntity):
         self._id = device_config.get(CONF_ID)
 
         self._attr_name: str = device_config[CONF_NAME]
+        self._attr_unique_id: str = device_config[CONF_UNIQUE_ID]
         if suffix_name:
             self._attr_name = f"{self._attr_name} {suffix_name}"
         self._attr_device_class = device_config.get(CONF_DEVICE_CLASS)
