@@ -118,7 +118,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    """Set up the IPX800v4."""
+    """Set up the IPX800v3."""
     hass.data.setdefault(DOMAIN, {})
 
     config = entry.data
@@ -206,7 +206,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     hass.data[DOMAIN][entry.entry_id] = {
         CONF_NAME: config[CONF_NAME],
-        CONF_UNIQUE_ID: config[CONF_UNIQUE_ID],
         CONTROLLER: ipx,
         COORDINATOR: coordinator,
         CONF_DEVICES: {},
@@ -443,7 +442,7 @@ class IpxEntity(CoordinatorEntity):
         self._id = device_config.get(CONF_ID)
 
         self._attr_name: str = device_config[CONF_NAME]
-        self._attr_unique_id: str = device_config[CONF_UNIQUE_ID]
+        self._attr_unique_id: str = device_config.get(CONF_UNIQUE_ID)
         if suffix_name:
             self._attr_name = f"{self._attr_name} {suffix_name}"
         self._attr_device_class = device_config.get(CONF_DEVICE_CLASS)
@@ -451,9 +450,9 @@ class IpxEntity(CoordinatorEntity):
             CONF_UNIT_OF_MEASUREMENT
         )
         self._attr_icon = device_config.get(CONF_ICON)
-        self._attr_unique_id = "_".join(
-            [DOMAIN, self.ipx.host, self._component, slugify(self._attr_name)]
-        )
+        # self._attr_unique_id = "_".join(
+        #     [DOMAIN, self.ipx.host, self._component, slugify(self._attr_name)]
+        # )
 
         configuration_url = f"http://{self.ipx.host}:{self.ipx.port}/api/xdevices.json"
 
