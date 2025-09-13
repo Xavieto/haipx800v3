@@ -206,6 +206,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     hass.data[DOMAIN][entry.entry_id] = {
         CONF_NAME: config[CONF_NAME],
+        CONF_UNIQUE_ID: config[CONF_UNIQUE_ID],
         CONTROLLER: ipx,
         COORDINATOR: coordinator,
         CONF_DEVICES: {},
