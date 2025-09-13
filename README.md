@@ -12,7 +12,7 @@ Ensure your IPX800 V3 is not overload with request from other tools.
 
 ## Deps
 
-[pypix800v3 python package](https://github.com/Xavieto/pypx800v3_async) (should be install by Home assistant. If not : `python3 -m pip install pyipx800v3_async`)
+[pypix800v3 python package](https://git.roques.bzh/ha/pyipx800v3_async) (should be install by Home assistant. If not : `python3 -m pip install pyipx800v3_async`)
 
 ## Description
 
